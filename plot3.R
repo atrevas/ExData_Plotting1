@@ -17,6 +17,7 @@ Sys.setlocale("LC_TIME", "English")
 
 # Build the plot
 
+# The plot will be written directly to a file, as it does not look well in RStudio
 png(file = "plot3.png")
 
 with( power, plot(date_time, Sub_metering_1, type = 'l', col = 'black'
@@ -29,6 +30,5 @@ legend( 'topright', lty = 1, col = c('black', 'red', 'blue')
       , legend = c('Sub_metering_1'
       , 'Sub_metering_2', 'Sub_metering_2'), cex = 0.7, inset = 0 )
 
-# Copy the plot to a PNG file
-#dev.copy(png, file = "plot3.png")
+# Close the device in order to write the plot to the png file
 dev.off()
